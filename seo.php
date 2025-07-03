@@ -1,3 +1,7 @@
+<!-- Responsive design -->
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
 <!-- SEO Metadata -->
 <meta name="description" content="Site web de l'église méthodiste du Togo, sis à Tokoin Wuiti">
 <meta name="keywords" content="église, méthodiste, togo, tokoin" />
