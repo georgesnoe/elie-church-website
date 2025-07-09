@@ -2,8 +2,8 @@
 <html lang="fr">
 
 <head>
-    <?php require_once "./seo.php" ?>
-    <title>Eglise méthodiste du Togo - Tokoin Wuiti</title>
+    <?php include_once "parts/head/user/head.php" ?>
+    <title>Acceuil • Eglise méthodiste du Togo - Tokoin Wuiti</title>
 </head>
 
 <body>
