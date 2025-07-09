@@ -3,4 +3,5 @@
 <link rel="stylesheet" href="./static/css/fonts.css"/>
 <link rel="stylesheet" href="./static/css/globals.css"/>
 <link rel="stylesheet" href="./static/css/header.css"/>
+<link rel="stylesheet" href="./static/css/main.css"/>
 <link rel="stylesheet" href="./static/css/footer.css"/>

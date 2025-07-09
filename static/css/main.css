@@ -1,0 +1,61 @@
+.main {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1rem;
+}
+
+.verse__container>* {
+    margin: 1rem 0;
+}
+
+.verse__content {
+    padding: 0 4rem;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 2rem;
+}
+
+.verse__text {
+    max-width: 640px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: x-large;
+}
+
+.verse__book {
+    font-weight: bold;
+    font-size: large;
+}
+
+
+@media (min-width: 640px) {
+    .main {
+        width: 640px;
+    }
+}
+
+@media (min-width: 768px) {
+    .main {
+        width: 768px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .main {
+        width: 1024px;
+    }
+}
+
+@media (min-width: 1280px) {
+    .main {
+        width: 1280px;
+    }
+}
+
+@media (min-width: 1536px) {
+    .main {
+        width: 1536px;
+    }
+}
