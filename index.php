@@ -2,12 +2,14 @@
 <html lang="fr">
 
 <head>
-    <?php include_once "parts/head/user/head.php" ?>
+    <?php include_once "parts/user/head.php" ?>
     <title>Acceuil • Eglise méthodiste du Togo - Tokoin Wuiti</title>
 </head>
 
 <body>
-
+    <header>
+        <?php include_once "parts/user/header.php" ?>
+    </header>
 </body>
 
 </html>
