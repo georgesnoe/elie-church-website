@@ -7,11 +7,11 @@
 </head>
 
 <body>
-    <header>
+    <header class="header">
         <?php include_once "parts/user/header.php" ?>
     </header>
-    <main></main>
-    <footer>
+    <main class="main"></main>
+    <footer class="footer">
         <?php include_once "parts/user/footer.php" ?>
     </footer>
 </body>
