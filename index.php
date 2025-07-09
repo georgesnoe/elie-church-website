@@ -10,6 +10,10 @@
     <header>
         <?php include_once "parts/user/header.php" ?>
     </header>
+    
+    <footer>
+        <?php include_once "parts/user/footer.php" ?>
+    </footer>
 </body>
 
 </html>

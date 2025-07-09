@@ -3,7 +3,7 @@
     <!-- Logo, Name, and Location Section -->
     <a class="header__brand" href="index.php">
         <!-- Logo Placeholder -->
-        <img src="https://placehold.co/60x60/00ffff/ff0000?text=LOGO" alt="Church Logo" class="header__logo">
+        <img src="https://placehold.co/80x80/00ffff/ff0000?text=LOGO" alt="Church Logo" class="header__logo">
         <div>
             <h1 class="header__name">Eglise méthodiste du Togo</h1>
             <p class="header__location">Tokoin Wuiti, Face école Ancilla</p>
@@ -28,3 +28,4 @@
         </ul>
     </nav>
 </div>
+<div class="header__backdrop"></div>

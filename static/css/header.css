@@ -1,48 +1,17 @@
-header {
+.header__container {
+    /* Considering logo and padding */
+    height: calc(80px + 2 * 1rem);
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-}
-
-.header__container {
-    width: 100%;
     padding: 1rem;
-    margin-left: auto;
-    margin-right: auto;
+    /* Centering container */
+    margin-left: 50%;
+    transform: translateX(-50%);
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-@media (min-width: 640px) {
-    .header__container {
-        max-width: 640px;
-    }
-}
-
-@media (min-width: 768px) {
-    .header__container {
-        max-width: 768px;
-    }
-}
-
-@media (min-width: 1024px) {
-    .header__container {
-        max-width: 1024px;
-    }
-}
-
-@media (min-width: 1280px) {
-    .header__container {
-        max-width: 1280px;
-    }
-}
-
-@media (min-width: 1536px) {
-    .header__container {
-        max-width: 1536px;
-    }
 }
 
 .header__brand,
@@ -59,10 +28,10 @@ header {
 }
 
 .header__logo {
-    width: 64px;
-    height: 64px;
+    width: 80px;
+    height: 80px;
     box-sizing: border-box;
-    border-radius: 50%;
+    border-radius: 40px;
 }
 
 .header__location {
@@ -79,16 +48,50 @@ header {
 }
 
 .header__nav-link::before {
+    content: '';
     position: absolute;
     left: 50%;
-    bottom: -2px;
-    height: 2px;
-    content: '';
-    background-color: red;
+    bottom: -4px;
     width: 0;
+    height: 4px;
+    background-color: red;
 }
 
 .header__nav-link:hover::before {
     left: 0;
     width: 100%;
+}
+
+.header__backdrop {
+    height: calc(80px + 2 * 1rem);
+}
+
+@media (min-width: 640px) {
+    .header__container {
+        width: 640px;
+    }
+}
+
+@media (min-width: 768px) {
+    .header__container {
+        width: 768px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .header__container {
+        width: 1024px;
+    }
+}
+
+@media (min-width: 1280px) {
+    .header__container {
+        width: 1280px;
+    }
+}
+
+@media (min-width: 1536px) {
+    .header__container {
+        width: 1536px;
+    }
 }
