@@ -2,7 +2,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<!-- SEO Metadata -->
+<!-- Début Optimisation SEO -->
 <meta name="description" content="Site web de l'église méthodiste du Togo, sis à Tokoin Wuiti">
 <meta name="keywords" content="église, méthodiste, togo, tokoin" />
 <meta name="author" content="SOSSOU Mawupénukukpoé" />
@@ -53,4 +53,4 @@
         }
     }
 </script>
-<!-- End SEO Metadata -->
+<!-- Fin Optimisation SEO -->
