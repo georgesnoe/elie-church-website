@@ -3,7 +3,7 @@
 
 <head>
     <?php include_once "parts/user/head.php" ?>
-    <title>Acceuil • Eglise méthodiste du Togo - Tokoin Wuiti</title>
+    <title>Activités • Eglise méthodiste du Togo - Tokoin Wuiti</title>
 </head>
 
 <body>
