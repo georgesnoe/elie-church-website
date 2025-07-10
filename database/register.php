@@ -34,7 +34,7 @@
                                 ":nom" => $nom,
                                 ":mot_de_passe" => $mot_de_passe
                             ]);
-                            if($pdo->lastInsertId()) {
+                            if($pdo->lastInsertId() >= 1) {
                                 // Cookie d'une semaine
                                 setcookie("credentials", random_bytes(16) . "-$pseudo#$pseudo", time() + (3600 * 24 * 7));
                                 header("Location: admin.php");
