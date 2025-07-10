@@ -11,10 +11,6 @@
     <title>Admin - Eglise méthodiste du Togo</title>
 </head>
 <body>
-    <h1>Panel d'administration</h1>
-    <a href="versets.php">Versets</a>
-    <a href="activites.php">Activités</a>
-    <a href="enseignements.php">Enseignements</a>
-    <a href="admins.php">Admins</a>
+    
 </body>
 </html>
