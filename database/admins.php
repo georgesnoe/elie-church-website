@@ -8,7 +8,7 @@
 <html lang="fr">
 <head>
     <?php include_once "../parts/admin/head.php" ?>
-    <title>Admin - Eglise méthodiste du Togo</title>
+    <title>Admins - Eglise méthodiste du Togo</title>
 </head>
 <body>
     
