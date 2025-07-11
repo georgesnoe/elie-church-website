@@ -17,7 +17,7 @@
         $stmt->execute([
             $_POST['nom'],
             $_POST['pseudo'],
-            password_hash($_POST['mot_de_passe'], PASSWORD_DEFAULT)
+            hash('sha256', $_POST['mot_de_passe'])
         ]);
     }
     // Delete
@@ -33,7 +33,7 @@
         $sql = "UPDATE admins SET nom = ?, pseudo = ?";
         if (!empty($_POST['mot_de_passe'])) {
             $sql .= ", mot_de_passe = ?";
-            $fields[] = password_hash($_POST['mot_de_passe'], PASSWORD_DEFAULT);
+            $fields[] = hash('sha256', $_POST['mot_de_passe']);
         }
         $sql .= " WHERE id = ?";
         $fields[] = $id;
