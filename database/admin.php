@@ -11,6 +11,9 @@
     <title>Admin - Eglise méthodiste du Togo</title>
 </head>
 <body>
+    <header class="header">
+        <?php include_once "parts/admin/header.php" ?>
+    </header>
     <h1>Panel d'administration</h1>
     <a href="versets.php">Versets</a>
     <a href="activites.php">Activités</a>

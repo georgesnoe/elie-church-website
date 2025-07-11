@@ -11,6 +11,8 @@
     <title>Versets - Eglise méthodiste du Togo</title>
 </head>
 <body>
-    
+    <header class="header">
+        <?php include_once "parts/admin/header.php" ?>
+    </header>
 </body>
 </html>
