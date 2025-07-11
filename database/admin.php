@@ -12,12 +12,16 @@
 </head>
 <body>
     <header class="header">
-        <?php include_once "parts/admin/header.php" ?>
+        <?php include_once "../parts/admin/header.php" ?>
     </header>
-    <h1>Panel d'administration</h1>
-    <a href="versets.php">Versets</a>
-    <a href="activites.php">Activités</a>
-    <a href="enseignements.php">Enseignements</a>
-    <a href="admins.php">Admins</a>
+    <main class="admin-panel">
+        <h1 class="admin-panel__title">Panel d'administration</h1>
+        <nav class="admin-panel__nav">
+            <a href="versets.php" class="admin-panel__link">Versets</a>
+            <a href="activites.php" class="admin-panel__link">Activités</a>
+            <a href="enseignements.php" class="admin-panel__link">Enseignements</a>
+            <a href="admins.php" class="admin-panel__link">Admins</a>
+        </nav>
+    </main>
 </body>
 </html>
