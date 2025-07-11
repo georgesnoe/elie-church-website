@@ -37,8 +37,14 @@
             $id
         ]);
     }
+    // Sorting mechanism
+    $sort = isset($_GET['sort']) ? $_GET['sort'] : 'date_publication_desc';
+    $orderBy = "date_publication DESC, id DESC";
+    if ($sort === 'date_publication_asc') $orderBy = "date_publication ASC, id ASC";
+    if ($sort === 'livre_asc') $orderBy = "livre ASC, id ASC";
+    if ($sort === 'livre_desc') $orderBy = "livre DESC, id DESC";
     // Fetch all
-    $stmt = $pdo->query("SELECT * FROM versets ORDER BY date_publication DESC, id DESC");
+    $stmt = $pdo->query("SELECT * FROM versets ORDER BY $orderBy");
     $versets = $stmt->fetchAll();
 ?>
 <!DOCTYPE html>
@@ -59,15 +65,27 @@
             <input type="date" name="date_publication" class="versets-panel__input" required />
             <button type="submit" name="add" class="versets-panel__btn">Ajouter</button>
         </form>
+        <div class="versets-panel__sort">
+            <form method="GET" class="versets-panel__sort-form">
+                <label for="sort" class="versets-panel__sort-label">Trier par :</label>
+                <select name="sort" id="sort" class="versets-panel__sort-select" onchange="this.form.submit()">
+                    <option value="date_publication_desc"<?= $sort==='date_publication_desc'?' selected':'' ?>>Date (plus récent)</option>
+                    <option value="date_publication_asc"<?= $sort==='date_publication_asc'?' selected':'' ?>>Date (plus ancien)</option>
+                    <option value="livre_asc"<?= $sort==='livre_asc'?' selected':'' ?>>Livre (A-Z)</option>
+                    <option value="livre_desc"<?= $sort==='livre_desc'?' selected':'' ?>>Livre (Z-A)</option>
+                </select>
+            </form>
+        </div>
         <section class="versets-panel__list">
             <?php foreach($versets as $row): ?>
-                <div class="versets-panel__item">
+                <div class="versets-panel__item" onclick="toggleActions(this)">
                     <div class="versets-panel__info">
                         <div class="versets-panel__verset"><?= htmlspecialchars($row['verset']) ?></div>
                         <div class="versets-panel__livre">Livre: <?= htmlspecialchars($row['livre']) ?></div>
                         <div class="versets-panel__date">Publication: <?= htmlspecialchars($row['date_publication']) ?></div>
                     </div>
-                    <div class="versets-panel__actions">
+                    <span class="versets-panel__expand-indicator" aria-label="Afficher les actions" title="Afficher les actions"></span>
+                    <div class="versets-panel__actions" style="display:none;">
                         <form method="POST" class="versets-panel__edit-form">
                             <input type="hidden" name="id" value="<?= $row['id'] ?>" />
                             <textarea name="verset" class="versets-panel__input" required><?= htmlspecialchars($row['verset']) ?></textarea>
@@ -81,5 +99,15 @@
             <?php endforeach; ?>
         </section>
     </main>
+    <script>
+        function toggleActions(item) {
+            var actions = item.querySelector('.versets-panel__actions');
+            if (actions.style.display === 'none' || actions.style.display === '') {
+                actions.style.display = 'flex';
+            } else {
+                actions.style.display = 'none';
+            }
+        }
+    </script>
 </body>
 </html>

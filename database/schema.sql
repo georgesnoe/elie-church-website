@@ -20,7 +20,8 @@ CREATE TABLE images (
     id INT NOT NULL AUTO_INCREMENT,
     lien VARCHAR(256),
     activites_id INT NOT NULL,
-    PRIMARY KEY(id)
+    PRIMARY KEY(id),
+    FOREIGN KEY(activites_id) REFERENCES activites(id) ON DELETE CASCADE
 );
 
 
