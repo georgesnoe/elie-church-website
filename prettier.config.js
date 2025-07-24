@@ -1,12 +1,10 @@
-module.exports = {
-  arrowParens: "always",
-  bracketSameLine: true,
-  bracketSpacing: true,
-  semi: true,
-  printWidth: 80,
-  tabWidth: 2,
-  singleQuote: false,
-  jsxSingleQuote: false,
-  trailingComma: "all",
-  htmlWhitespaceSensitivity: "ignore",
-};
+export const arrowParens = "always";
+export const bracketSameLine = true;
+export const bracketSpacing = true;
+export const semi = true;
+export const printWidth = 80;
+export const tabWidth = 2;
+export const singleQuote = false;
+export const jsxSingleQuote = false;
+export const trailingComma = "all";
+export const htmlWhitespaceSensitivity = "ignore";
