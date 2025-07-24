@@ -16,7 +16,7 @@ export default [
     },
   }),
   ...tseslint.config({
-    files: ['**/*.ts', '**/*.tsx'],
+    files: ['src/**/*.ts', 'src/**/*.tsx'],
     extends: [
       'plugin:@typescript-eslint/recommended',
     ],
