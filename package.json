@@ -7,6 +7,8 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
+    "lint": "eslint .",
+    "format": "prettier --write .",
     "serve:ssr:elie-church-website": "node dist/elie-church-website/server/server.mjs"
   },
   "prettier": {
