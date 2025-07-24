@@ -1,59 +1,27 @@
-# ElieChurchWebsite
+# Site web de l'église méthodiste du Togo
+Bienvenue sur le site web officiel de l'église méthodiste du Togo.
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.1.2.
+## À propos du site
 
-## Development server
+Ce site a été créé pour vous permettre de découvrir l'église méthodiste du Togo, ses activités, ses valeurs et ses événements. Vous y trouverez des informations utiles, des actualités, et des ressources pour rester connecté à la communauté.
 
-To start a local development server, run:
+## Fonctionnalités principales
 
-```bash
-ng serve
-```
+- Présentation de l'église et de son histoire
+- Calendrier des événements et des célébrations
+- Informations sur les cultes et les horaires
+- Actualités et annonces importantes
+- Galerie de photos et de vidéos
+- Contact et localisation des paroisses
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## Comment utiliser le site
 
-## Code scaffolding
+1. **Navigation** : Utilisez le menu principal pour accéder aux différentes sections du site.
+2. **Recherche d'informations** : Consultez les pages pour trouver les informations dont vous avez besoin.
+3. **Contact** : Utilisez la page de contact pour poser vos questions ou demander de l'aide.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Besoin d'aide ?
 
-```bash
-ng generate component component-name
-```
+Si vous avez des questions ou des difficultés à utiliser le site, n'hésitez pas à nous contacter via la page de contact. Nous sommes là pour vous aider.
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Merci de votre visite et soyez les bienvenus !
