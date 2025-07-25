@@ -196,3 +196,59 @@
   font-weight: 700;
   border-radius: 0 0.75rem 0 0.75rem;
 }
+
+/* Footer */
+.site-footer {
+  background-color: #111827;
+  color: #d1d5db;
+  padding-top: 3rem;
+}
+
+.footer-content-wrapper {
+  max-width: 7xl;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.footer-logo-contact {
+  flex: 1 1 300px;
+}
+
+.footer-logo .logo-text {
+  font-family: "Tinos", serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: white;
+}
+
+.footer-logo .logo-subtext {
+  font-size: 0.875rem;
+  color: #9ca3af;
+}
+
+.contact-info {
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.footer-map {
+  flex: 1 1 400px;
+  min-height: 250px;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  border: 3px solid #374151;
+}
+
+.footer-bottom-bar {
+  margin-top: 3rem;
+  padding: 1.5rem;
+  background-color: #000;
+  text-align: center;
+  font-size: 0.875rem;
+  color: #9ca3af;
+}
