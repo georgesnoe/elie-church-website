@@ -3,7 +3,7 @@ import { Routes } from '@angular/router';
 export const routes: Routes = [
   {
     path: '',
-    loadComponent: () => import('./app').then((m) => m.App),
+    loadComponent: () => import('./pages/home/home').then((m) => m.Home),
     title: 'Acceuil - Eglise méthodiste du Togo',
   },
 ];

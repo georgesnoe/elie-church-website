@@ -1,0 +1,176 @@
+<!-- Responsive Header -->
+<header class="sticky top-0 z-40 w-full bg-white shadow-md">
+  <div class="container mx-auto flex items-center justify-between p-4">
+    <!-- Logo -->
+    <div class="flex items-center">
+      <h1 class="text-2xl font-serif font-bold">Église méthodiste du Togo</h1>
+    </div>
+
+    <!-- Desktop Navigation -->
+    <nav class="hidden md:flex items-center space-x-8">
+      <a href="#" class="text-gray-600 hover:text-gray-900">Acceuil</a>
+      <a href="#" class="text-gray-600 hover:text-gray-900">Activités</a>
+      <a href="#" class="text-gray-600 hover:text-gray-900">Enseignements</a>
+      <a href="#" class="text-gray-600 hover:text-gray-900"
+        >Histoire de l'église</a
+      >
+    </nav>
+
+    <!-- Mobile Menu Button -->
+    <div class="md:hidden">
+      <button (click)="toggleMenu()" class="text-gray-600 hover:text-gray-900">
+        <lucide-icon [img]="Menu" size="24"></lucide-icon>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile Menu -->
+<div
+  class="mobile-menu-overlay"
+  [ngClass]="{ active: isMenuOpen }"
+  (click)="toggleMenu()"
+></div>
+<div class="mobile-menu" [ngClass]="{ active: isMenuOpen }">
+  <div class="flex justify-end p-4">
+    <button (click)="toggleMenu()" class="text-gray-600 hover:text-gray-900">
+      <lucide-icon [img]="X" size="24"></lucide-icon>
+    </button>
+  </div>
+  <nav class="flex flex-col space-y-6 p-4">
+    <a href="#" class="text-gray-800 hover:bg-gray-100 p-2 rounded">Acceuil</a>
+    <a href="#" class="text-gray-800 hover:bg-gray-100 p-2 rounded"
+      >Activités</a
+    >
+    <a href="#" class="text-gray-800 hover:bg-gray-100 p-2 rounded"
+      >Enseignements</a
+    >
+    <a href="#" class="text-gray-800 hover:bg-gray-100 p-2 rounded"
+      >Histoire de l'église</a
+    >
+  </nav>
+</div>
+
+<section class="daily-verse-container">
+  <div class="verse-content">
+    <p class="verse-text">
+      "Car Dieu a tant aimé le monde qu'il a donné son Fils unique, afin que
+      quiconque croit en lui ne périsse point, mais qu'il ait la vie éternelle."
+    </p>
+    <p class="verse-reference">Jean 3:16</p>
+  </div>
+</section>
+
+<section class="daily-activity-container">
+  <div class="activity-header">
+    <span class="today-label">Aujourd'hui</span>
+  </div>
+  <div class="activity-content">
+    <div class="activity-details">
+      <h2 class="activity-title">Répétition de la chorale</h2>
+      <p class="activity-description">
+        Préparation pour le culte de dimanche. N'oubliez pas vos cahiers de
+        chants.
+      </p>
+      <div class="activity-meta">
+        <span class="activity-date">Mardi, 29 Juillet 2025</span>
+        <span class="activity-time">18:00 - 20:00</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="weekly-events-container">
+  <h2 class="section-title">Cette semaine à l'église</h2>
+  <div class="events-grid">
+    <!-- Past Event -->
+    <div class="event-card past-event">
+      <div class="event-card-content">
+        <span class="event-status-badge">Terminé</span>
+        <h3 class="event-title">Étude Biblique</h3>
+        <p class="event-description">
+          Plongée dans le livre des Psaumes. Chapitres 1-5.
+        </p>
+        <div class="event-meta">
+          <span class="event-date">Jeudi, 24 Juillet 2025</span>
+          <span class="event-time">19:00 - 20:30</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Upcoming Event 1 -->
+    <div class="event-card">
+      <div class="event-card-content">
+        <h3 class="event-title">Service de Guérison</h3>
+        <p class="event-description">
+          Un temps de prière et d'imposition des mains pour les malades.
+        </p>
+        <div class="event-meta">
+          <span class="event-date">Vendredi, 25 Juillet 2025</span>
+          <span class="event-time">18:30 - 20:00</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Upcoming Event 2 -->
+    <div class="event-card">
+      <div class="event-card-content">
+        <h3 class="event-title">Répétition du groupe musical</h3>
+        <p class="event-description">
+          Préparation pour le culte d'adoration et de louange.
+        </p>
+        <div class="event-meta">
+          <span class="event-date">Samedi, 26 Juillet 2025</span>
+          <span class="event-time">16:00 - 18:00</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Upcoming Event 3 -->
+    <div class="event-card">
+      <div class="event-card-content">
+        <h3 class="event-title">Culte Dominical</h3>
+        <p class="event-description">
+          Célébration, adoration et prédication de la parole de Dieu.
+        </p>
+        <div class="event-meta">
+          <span class="event-date">Dimanche, 27 Juillet 2025</span>
+          <span class="event-time">09:00 - 11:30</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-content-wrapper">
+    <div class="footer-logo-contact">
+      <div class="footer-logo">
+        <h1 class="logo-text">Église Méthodiste du Togo</h1>
+        <p class="logo-subtext">Tokoin Wuiti</p>
+      </div>
+      <div class="contact-info">
+        <p>123 Rue de la Foi, Tokoin Wuiti</p>
+        <p>Lomé, Togo</p>
+        <p><strong>Téléphone:</strong> (+228) 99 99 99 99</p>
+      </div>
+    </div>
+    <div class="footer-map">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15867.053161337943!2d1.2135445554199273!3d6.162448000000022!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1023e23d5716b2ed%3A0x424233fb7fe55fe!2sParoisse%20Methodiste%20Penuel!5e0!3m2!1sfr!2stg!4v1753481349194!5m2!1sfr!2stg"
+        width="100%"
+        height="100%"
+        style="border: 0"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+    </div>
+  </div>
+  <div class="footer-bottom-bar">
+    <p>
+      &copy; {{ currentYear }} Eglise Méthodiste du Togo, Paroisse Penuel. Tous
+      droits réservés.
+    </p>
+  </div>
+</footer>
