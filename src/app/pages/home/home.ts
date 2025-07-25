@@ -6,4 +6,5 @@ import { Component } from '@angular/core';
   templateUrl: './home.html',
   styleUrl: './home.css',
 })
+// eslint-disable-next-line @typescript-eslint/no-extraneous-class
 export class Home {}
