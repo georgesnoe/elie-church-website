@@ -3,3 +3,35 @@
 .font-serif {
   font-family: "Tinos", serif;
 }
+
+.daily-verse-container {
+  background-color: #f9fafb;
+  border-radius: 0.5rem;
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 4xl;
+  box-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  text-align: center;
+}
+
+.verse-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.verse-text {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-style: italic;
+  color: #1f2937;
+}
+
+.verse-reference {
+  margin-top: 1rem;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-weight: 600;
+  color: #4b5563;
+}
