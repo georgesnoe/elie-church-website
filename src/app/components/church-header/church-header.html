@@ -1,52 +1,73 @@
-<!-- Responsive Header -->
-<header class="sticky top-0 z-40 w-full bg-white shadow-md">
-  <div class="container mx-auto flex items-center justify-between p-4">
-    <!-- Logo -->
-    <div class="flex items-center">
-      <h1 class="text-2xl font-serif font-bold">Église méthodiste du Togo</h1>
+<header
+  class="fixed left-0 top-0 z-50 w-full transition-all duration-300"
+  [ngClass]="{
+    'bg-white shadow-md': isScrolled,
+    'bg-transparent': !isScrolled,
+  }"
+>
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex h-16 items-center justify-between">
+      <div class="flex-shrink-0">
+        <a
+          href="#"
+          class="text-2xl font-bold"
+          [ngClass]="{
+            'text-gray-800': isScrolled,
+            'text-white': !isScrolled,
+          }"
+        >
+          Église Méthodiste
+        </a>
+      </div>
+      <nav class="hidden md:flex md:items-center md:space-x-8">
+        @for (link of navLinks; track link.name) {
+          <a
+            [href]="link.href"
+            class="font-medium transition-colors duration-300"
+            [ngClass]="{
+              'text-gray-600 hover:text-gray-800': isScrolled,
+              'text-white hover:text-gray-200': !isScrolled,
+            }"
+            >{{ link.name }}</a
+          >
+        }
+      </nav>
+      <div class="md:hidden">
+        <button
+          (click)="toggleMenu()"
+          type="button"
+          class="inline-flex items-center justify-center rounded-md p-2"
+          [ngClass]="{
+            'text-gray-800': isScrolled,
+            'text-white': !isScrolled,
+          }"
+        >
+          <span class="sr-only">Open main menu</span>
+          <lucide-angular
+            [name]="isMenuOpen ? X : Menu"
+            class="h-6 w-6"
+          ></lucide-angular>
+        </button>
+      </div>
     </div>
+  </div>
 
-    <!-- Desktop Navigation -->
-    <nav class="hidden md:flex items-center space-x-8">
-      <a href="#" class="text-gray-600 hover:text-gray-900">Acceuil</a>
-      <a href="#" class="text-gray-600 hover:text-gray-900">Activités</a>
-      <a href="#" class="text-gray-600 hover:text-gray-900">Enseignements</a>
-      <a href="#" class="text-gray-600 hover:text-gray-900"
-        >Histoire de l'église</a
-      >
-    </nav>
-
-    <!-- Mobile Menu Button -->
-    <div class="md:hidden">
-      <button (click)="toggleMenu()" class="text-gray-600 hover:text-gray-900">
-        <lucide-icon [img]="Menu" size="24"></lucide-icon>
-      </button>
+  <!-- Mobile menu, show/hide based on menu state. -->
+  <div
+    class="md:hidden"
+    [ngClass]="{
+      block: isMenuOpen,
+      hidden: !isMenuOpen,
+    }"
+  >
+    <div class="bg-white px-2 pb-3 pt-2 shadow-lg sm:px-3">
+      @for (link of navLinks; track link.name) {
+        <a
+          [href]="link.href"
+          class="block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-100"
+          >{{ link.name }}</a
+        >
+      }
     </div>
   </div>
 </header>
-
-<!-- Mobile Menu -->
-<div
-  class="mobile-menu-overlay"
-  [ngClass]="{ active: isMenuOpen }"
-  (click)="toggleMenu()"
-></div>
-<div class="mobile-menu" [ngClass]="{ active: isMenuOpen }">
-  <div class="flex justify-end p-4">
-    <button (click)="toggleMenu()" class="text-gray-600 hover:text-gray-900">
-      <lucide-icon [img]="X" size="24"></lucide-icon>
-    </button>
-  </div>
-  <nav class="flex flex-col space-y-6 p-4">
-    <a href="#" class="text-gray-800 hover:bg-gray-100 p-2 rounded">Acceuil</a>
-    <a href="#" class="text-gray-800 hover:bg-gray-100 p-2 rounded"
-      >Activités</a
-    >
-    <a href="#" class="text-gray-800 hover:bg-gray-100 p-2 rounded"
-      >Enseignements</a
-    >
-    <a href="#" class="text-gray-800 hover:bg-gray-100 p-2 rounded"
-      >Histoire de l'église</a
-    >
-  </nav>
-</div>
