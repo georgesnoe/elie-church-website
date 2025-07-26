@@ -9,11 +9,11 @@
 
 html,
 body {
-  font-family: "Tinos", serif;
+  font-family: "Source Sans 3", sans-serif;
 }
 
 @layer utilities {
   .church-logo {
-    font-family: "Tinos", serif;
+    @apply font-serif font-extrabold text-2xl;
   }
 }
