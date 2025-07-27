@@ -18,4 +18,10 @@ export const routes: Routes = [
       import('./pages/activity/activity').then((m) => m.Activity),
     title: "Activités de l'église - Eglise méthodiste du Togo",
   },
+  {
+    path: 'teachings',
+    loadComponent: () =>
+      import('./pages/teachings/teachings').then((m) => m.Teachings),
+    title: "Enseignements de l'église - Eglise méthodiste du Togo",
+  },
 ];
