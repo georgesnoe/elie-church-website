@@ -7,19 +7,19 @@ export const routes: Routes = [
     title: 'Acceuil - Eglise méthodiste du Togo',
   },
   {
-    path: 'history',
+    path: 'histoire',
     loadComponent: () =>
       import('./pages/history/history').then((m) => m.History),
     title: "Histoire de l'église - Eglise méthodiste du Togo",
   },
   {
-    path: 'activity',
+    path: 'activites',
     loadComponent: () =>
       import('./pages/activity/activity').then((m) => m.Activity),
     title: "Activités de l'église - Eglise méthodiste du Togo",
   },
   {
-    path: 'teachings',
+    path: 'enseignements',
     loadComponent: () =>
       import('./pages/teachings/teachings').then((m) => m.Teachings),
     title: "Enseignements de l'église - Eglise méthodiste du Togo",
