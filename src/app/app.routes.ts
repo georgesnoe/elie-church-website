@@ -12,4 +12,10 @@ export const routes: Routes = [
       import('./pages/history/history').then((m) => m.History),
     title: "Histoire de l'église - Eglise méthodiste du Togo",
   },
+  {
+    path: 'activity',
+    loadComponent: () =>
+      import('./pages/activity/activity').then((m) => m.Activity),
+    title: "Activités de l'église - Eglise méthodiste du Togo",
+  },
 ];
