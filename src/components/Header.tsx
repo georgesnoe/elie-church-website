@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import "@/styles/header.css";
 
-const Header = () => {
+export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
@@ -54,6 +54,4 @@ const Header = () => {
       )}
     </header>
   );
-};
-
-export default Header;
+}

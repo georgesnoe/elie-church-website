@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import "@/styles/footer.css";
 
-const Footer = () => {
+export default function Footer() {
   // Coordonnées de l'église (à remplacer par les vôtres)
   const address = 'Rue de l\'Église, Tokoin Wuiti';
   const city = 'Lomé, Togo';
@@ -62,6 +62,4 @@ const Footer = () => {
       </div>
     </footer>
   );
-};
-
-export default Footer;
+}
