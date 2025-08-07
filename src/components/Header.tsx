@@ -47,7 +47,7 @@ export default function Header() {
               <Link href="/" onClick={() => setIsMenuOpen(false)}>Accueil</Link>
               <Link href="/activites" onClick={() => setIsMenuOpen(false)}>Activités</Link>
               <Link href="/enseignements" onClick={() => setIsMenuOpen(false)}>Enseignements</Link>
-              <Link href="/histoire" onClick={() => setIsMenuOpen(false)}>Histoire de l'église</Link>
+              <Link href="/histoire" onClick={() => setIsMenuOpen(false)}>Histoire de l&apos;église</Link>
             </nav>
           </div>
         </div>
