@@ -1,0 +1,53 @@
+/* --- Styles de la page entière --- */
+.verse-page-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 2rem;
+  background-color: #f7f7f7; /* Un fond gris clair et apaisant */
+}
+
+/* --- Styles de la carte du verset --- */
+.verse-card {
+  max-width: 800px;
+  width: 100%;
+  padding: 3rem;
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  border-top: 5px solid #c0a158; /* Bordure dorée pour l'élégance */
+}
+
+.verse-text {
+  font-family: serif; /* Police classique et solennelle */
+  font-size: 2.5rem;
+  line-height: 1.4;
+  color: #333333;
+  margin-bottom: 2rem;
+}
+
+.verse-source {
+  font-family: sans-serif; /* Police lisible pour la référence */
+  font-size: 1.25rem;
+  font-style: italic;
+  color: #666666;
+  text-align: right;
+}
+
+/* --- Media query pour la réactivité sur mobile --- */
+@media (max-width: 768px) {
+  .verse-page-container {
+    padding: 1rem;
+  }
+  .verse-card {
+    padding: 2rem 1.5rem;
+  }
+  .verse-text {
+    font-size: 1.5rem;
+  }
+  .verse-source {
+    font-size: 1rem;
+  }
+}
