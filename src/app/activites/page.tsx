@@ -1,37 +1,49 @@
+import pool from "@/lib/db";
 import "@/styles/activity.css";
 
-export default function Activites() {
+type ActivityProps = {
+  id: number;
+  title: string;
+  description: string;
+  image: string;
+  date: string;
+};
 
-  const activites = [
-    {
-      id: 1,
-      title: 'Camp d’évangélisation',
-      description: 'Un moment de partage et de foi intense qui a permis à de nombreux fidèles de se rapprocher de la parole divine.',
-      date: '12-14 Juillet 2025',
-      image: 'https://images.unsplash.com/photo-1517404215738-15263e9f9178', // Placeholder, à remplacer
-    },
-    {
-      id: 2,
-      title: 'Séminaire sur la famille',
-      description: 'Un séminaire inspirant sur les fondations bibliques de la famille et du couple, avec des témoignages forts.',
-      date: '22 Juin 2025',
-      image: 'https://images.unsplash.com/photo-1517404215738-15263e9f9178', // Placeholder, à remplacer
-    },
-    {
-      id: 3,
-      title: 'Culte de Pâques',
-      description: 'Une célébration émouvante de la résurrection, marquée par des chants de louange et un message d’espoir.',
-      date: '20 Avril 2025',
-      image: 'https://images.unsplash.com/photo-1517404215738-15263e9f9178', // Placeholder, à remplacer
-    },
-    {
-      id: 4,
-      title: 'Concert de la chorale',
-      description: 'Un grand concert qui a rassemblé la communauté pour un moment de musique et de célébration.',
-      date: '10 Mai 2025',
-      image: 'https://images.unsplash.com/photo-1517404215738-15263e9f9178', // Placeholder, à remplacer
-    },
-  ];
+
+async function getOldActivities() {
+  const query = `
+    SELECT id, titre, description, image_url, date_evenement
+    FROM activites
+    WHERE date_evenement < CURRENT_DATE
+    ORDER BY date_evenement DESC;
+  `;
+  try {
+    const res = await pool.query(query);
+    // Retourne un tableau d'activités
+    return res.rows;
+  } catch {
+    console.log("Erreur lors de la récupération des activités passées");
+    return [];
+  }
+}
+
+export default async function Activites() {
+  const response = await getOldActivities();
+  let activites: ActivityProps[] = [];
+
+  if (!response || response.length == 0) {
+    activites = [];
+  } else {
+    response.forEach((activity) => {
+      activites.push({
+        id: activity.id,
+        title: activity.title,
+        description: activity.description,
+        date: new Date(activity.date_evenement).toLocaleDateString("fr-FR"),
+        image: activity.image_url
+      });
+    });
+  }
 
   return (
     <main>
