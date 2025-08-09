@@ -1,21 +1,61 @@
+import pool from "@/lib/db";
+import { getWeekDates } from "@/lib/db-utils";
+
 import EventCard from "@/components/EventCard";
 import type EventProps from '@/lib/EventProps';
 import "@/styles/week-schedule.css";
 
-export default function WeekSchedule() {
+async function getWeekSchedule() {
+  // 1. Calcul de l'intervalle de la semaine
+  const { monday, sunday } = getWeekDates();
 
-  // Données de la semaine (Exemple) - Remplacez par vos données réelles
-  const evenements: EventProps[] = [
-    { id: 1, title: 'Culte du dimanche', description: 'Culte d’adoration et de louange', day: 'Dimanche', date: '01', time: '09h30', isPast: true },
-    { id: 2, title: 'Étude biblique', description: 'Approfondissement des écritures', day: 'Mardi', date: '03', time: '19h00', isPast: true },
-    { id: 3, title: 'Prière communautaire', description: 'Moment de prière pour l’église', day: 'Mercredi', date: '04', time: '18h30', isPast: false },
-    { id: 4, title: 'Répétition de la chorale', description: 'Répétition pour la louange', day: 'Jeudi', date: '05', time: '19h00', isPast: false },
-    { id: 5, title: 'Veillée de prière', description: 'Nuit de prière et d’intercession', day: 'Vendredi', date: '06', time: '21h00', isPast: false },
-    { id: 6, title: 'Visite aux malades', description: 'Action de soutien aux membres', day: 'Samedi', date: '07', time: '10h00', isPast: false },
-    { id: 7, title: 'Culte du dimanche', description: 'Culte d’adoration et de louange', day: 'Dimanche', date: '08', time: '09h30', isPast: false },
-  ];
+  // 2. Définition de la requête SQL avec des paramètres ($1, $2)
+  const query = `
+    SELECT id, titre, description, image_url, date_evenement, heure_evenement
+    FROM activites
+    WHERE date_evenement BETWEEN $1 AND $2
+    ORDER BY date_evenement ASC, heure_evenement ASC;
+  `;
+  const values = [monday, sunday];
 
+  try {
+    const res = await pool.query(query, values);
+    return res.rows;
+  } catch {
+    console.log("Erreur lors de la récupération du programme de la semaine");
+    return [];
+  }
+};
 
+export default async function WeekSchedule() {
+  const response = await getWeekSchedule();
+  let evenements: EventProps[] = [];
+
+  if (!response || response.length == 0) {
+    evenements = [{
+      id: 1,
+      title: "Pas d'événement",
+      description: "Aucun événement n'est prévu pour aujourd'hui",
+      day: '',
+      date: '',
+      time: '',
+      isPast: false,
+      imageUrl: ''
+    }];
+  } else {
+    response.forEach((event) => {
+      evenements.push({
+        id: event.id,
+        title: event.title,
+        description: event.description,
+        day: `${new Date(event.date_evenement).getDay()}`,
+        date: `${new Date(event.date_evenement).getDate()}`,
+        time: event.time,
+        isPast: (Date.now() - new Date(event.date_evenement).getTime()) > 0,
+        imageUrl: event.image_url
+      });
+    })
+  }
 
   return (
     <div className="programme-container">
