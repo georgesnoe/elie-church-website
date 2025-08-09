@@ -1,3 +1,5 @@
+import "@/styles/activity.css";
+
 export default function Activites() {
 
   const activites = [
