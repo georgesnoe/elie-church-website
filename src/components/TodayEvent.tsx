@@ -1,40 +1,72 @@
+import pool from "@/lib/db";
 import "@/styles/today-event.css";
 
-export default function TodayEvent() {
-  // Informations sur l'événement (à remplacer par les données réelles)
-  const eventName = "Culte d'adoration et de louange";
-  const eventTime = "18h30";
-  const eventDescription = "Rejoignez-nous ce soir pour notre événement spécial. Un moment de partage et de communion. Préparez votre cœur à recevoir la parole de Dieu.";
-  const advice = "Conseil : Venez avec un esprit d'adoration et n'hésitez pas à inviter un ami ou un membre de votre famille.";
+async function getTodayEvent() {
+  const query = `
+    SELECT titre, description, image_url, conseil, heure_evenement
+    FROM activites
+    WHERE date_evenement = CURRENT_DATE
+    LIMIT 1;
+  `;
+
+  try {
+    const response = await pool.query(query);
+    return response.rows[0] || null;
+  } catch {
+    console.log("Une erreur s'est produite lors de la récupération de l'événement de ce soir");
+    return null;
+  }
+}
+
+export default async function TodayEvent() {
+
+  const event = await getTodayEvent();
+  let titre, description, conseil, image_url, heure_evenement;
+
+  if (!event) {
+    titre = "Pas d'événement";
+    description = "Aucun événement n'est prévu pour ce soir.";
+    conseil = "";
+    image_url = "";
+    heure_evenement = "";
+  } else {
+    titre = event.titre;
+    description = event.description;
+    conseil = event.conseil;
+    image_url = event.image_url;
+    heure_evenement = event.heure_evenement;
+  }
+
+
 
   return (
     <div className="event-page-container">
       <div className="event-card">
         {/* Un petit texte descriptif pour contextualiser l'événement */}
         <p className="card-description">
-          {eventDescription}
+          {description}
         </p>
-        
+
         <div className="event-content">
           {/* Section pour l'image */}
           <div className="event-image-container">
             {/* Placeholder d'image - Remplacez par votre image */}
-            <div className="event-image-placeholder"></div>
+            {image_url.trim() != "" ? <img src={image_url} alt={titre} /> : <div className="event-image-placeholder"></div>}
             {/* Coin affichant l'heure */}
             <div className="event-time-badge">
-              {eventTime}
+              {heure_evenement}
             </div>
           </div>
-          
+
           {/* Nom de l'événement */}
           <h2 className="event-title">
-            {eventName}
+            {titre}
           </h2>
-          
+
           {/* Conseil aux membres */}
           <div className="advice-box">
             <span className="advice-icon">💡</span>
-            <p className="advice-text">{advice}</p>
+            <p className="advice-text">{conseil}</p>
           </div>
         </div>
       </div>
