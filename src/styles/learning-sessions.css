@@ -1,0 +1,123 @@
+/* --- Conteneur principal de la page --- */
+.enseignements-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.enseignements-title {
+  font-family: serif;
+  font-size: 2.5rem;
+  color: #333333;
+  margin-bottom: 0.5rem;
+}
+
+.enseignements-description {
+  font-family: sans-serif;
+  font-size: 1rem;
+  color: #666666;
+  margin-bottom: 3rem;
+}
+
+/* --- Liste des enseignements --- */
+.teachings-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+/* --- Style de chaque carte d'enseignement --- */
+.teaching-card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  text-align: left;
+}
+
+.teaching-card:hover {
+  transform: translateY(-5px);
+}
+
+.teaching-image-container {
+  width: 100%;
+  height: 200px;
+  background-color: #e0e0e0;
+}
+
+.teaching-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.teaching-card-content {
+  padding: 1.5rem;
+}
+
+.teaching-card-title {
+  font-family: serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333333;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.teaching-card-preacher {
+  font-family: sans-serif;
+  font-size: 0.9rem;
+  font-style: italic;
+  color: #666666;
+  margin: 0;
+}
+
+.teaching-card-date {
+  font-family: sans-serif;
+  font-size: 0.8rem;
+  color: #999999;
+  margin-bottom: 1rem;
+}
+
+/* --- Boutons de style iOS --- */
+.teaching-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.ios-text-button {
+  background: transparent;
+  border: none;
+  font-family: sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.ios-text-button:hover {
+  opacity: 0.7;
+}
+
+.listen-button {
+  color: #007aff; /* Le bleu caractéristique d'iOS */
+}
+
+.download-button {
+  color: #6c757d; /* Un gris pour la différenciation */
+}
+
+/* Responsive sur mobile */
+@media (max-width: 768px) {
+  .enseignements-container {
+    padding: 2rem 1rem;
+  }
+}
