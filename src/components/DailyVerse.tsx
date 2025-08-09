@@ -1,9 +1,36 @@
+import pool from "@/lib/db";
 import "@/styles/daily-verse.css";
 
-export default function DailyVerse() {
-  // Vous pouvez récupérer le verset d'une API ou d'une base de données ici
-  const verset = "Car l’Éternel est bon ; Sa bonté dure toujours, Et sa fidélité de génération en génération.";
-  const source = "Psaumes 100:5";
+
+async function getDailyVerse() {
+  const query = `
+    SELECT source, verset FROM versets
+    WHERE date_affichage = CURRENT_DATE;
+  `;
+
+  try {
+    const response = await pool.query(query);
+    return response.rows[0] || null;
+  } catch {
+    console.log("Une erreur s'est produite lors de la récuperation du verset du jour");
+  }
+}
+
+
+export default async function DailyVerse() {
+
+  const response = await getDailyVerse();
+
+  let source, verset;
+
+  if (!response) {
+    verset = "Aucun verset n'est programmé pour aujourd'hui.";
+    source = "";
+  } else {
+    verset = response.verset;
+    source = response.source;
+  }
+
 
   return (
     <div className="verse-page-container">
