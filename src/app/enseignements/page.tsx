@@ -1,52 +1,60 @@
+import pool from "@/lib/db";
 import "@/styles/learning-sessions.css";
 
-export default function Enseignements() {
+async function getLearningSessions() {
+  const query = `
+    SELECT id, type_enseignement, titre, pasteur, date_enseignement, image_url, media_url
+    FROM enseignements
+    ORDER BY date_enseignement DESC;
+  `;
 
-  const enseignements = [
-    {
-      id: 1,
-      type: 'audio',
-      title: "La foi qui déplace les montagnes",
-      preacher: "Pasteur John Doe",
-      date: "05 Août 2025",
-      image: "https://images.unsplash.com/photo-1517404215738-15263e9f9178",
-      url: "#", // URL de l'audio à remplacer
-    },
-    {
-      id: 2,
-      type: 'video',
-      title: "Vivre une vie de prière efficace",
-      preacher: "Pasteur Jane Smith",
-      date: "28 Juillet 2025",
-      image: "https://images.unsplash.com/photo-1517404215738-15263e9f9178",
-      url: "#", // URL de la vidéo à remplacer
-    },
-    {
-      id: 3,
-      type: 'audio',
-      title: "La puissance du Saint-Esprit",
-      preacher: "Pasteur John Doe",
-      date: "14 Juillet 2025",
-      image: "https://images.unsplash.com/photo-1517404215738-15263e9f9178",
-      url: "#",
-    },
-    {
-      id: 4,
-      type: 'video',
-      title: "Le pardon et la réconciliation",
-      preacher: "Pasteur Jane Smith",
-      date: "07 Juillet 2025",
-      image: "https://images.unsplash.com/photo-1517404215738-15263e9f9178",
-      url: "#",
-    },
-  ];
+  try {
+    const res = await pool.query(query);
+    // Retourne un tableau de tous les enseignements
+    return res.rows;
+  } catch {
+    console.log("Erreur lors de la récupération des enseignements");
+    return [];
+  }
+}
+
+type SessionProps = {
+  id: number;
+  type: string;
+  title: string;
+  preacher: string;
+  date: string;
+  image: string;
+  url: string;
+};
+
+export default async function Enseignements() {
+
+  const response = await getLearningSessions();
+  let enseignements: SessionProps[] = [];
+
+  if (!response || response.length == 0) {
+    enseignements = [];
+  } else {
+    response.forEach((session) => {
+      enseignements.push({
+        id: session.id,
+        type: session.type_enseignement,
+        title: session.title,
+        preacher: session.pasteur,
+        date: new Date(session.date_enseignement).toLocaleDateString("fr-FR"),
+        image: session.image_url,
+        url: session.media_url
+      });
+    });
+  }
 
   return (
     <main>
       <div className="enseignements-container">
         <h2 className="enseignements-title">Nos Enseignements</h2>
         <p className="enseignements-description">
-          Écoutez et regardez les enseignements de nos pasteurs pour grandir dans votre foi.
+          Écoutez et regardez les enseignements pour grandir dans la foi.
         </p>
         <div className="teachings-list">
           {enseignements.map(enseignement => (
