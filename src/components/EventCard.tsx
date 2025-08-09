@@ -1,11 +1,12 @@
 import EventProps from "@/lib/EventProps";
 
-export default function EventCard({event}: {event: EventProps}) {
-  const { title, description, day, date, time, isPast } = event;
+export default function EventCard({ event }: { event: EventProps }) {
+  const { title, description, day, date, time, isPast, imageUrl } = event;
 
   return (
     <div className={`event-card ${isPast ? 'past' : ''}`}>
-      <div className="event-image-placeholder">
+      <div className="event-image-placeholder"
+        style={{ backgroundImage: imageUrl, backgroundPosition: "center", backgroundSize: "cover" }}>
         {isPast && (
           <div className="past-event-overlay">
             <span className="check-icon">✓</span>
