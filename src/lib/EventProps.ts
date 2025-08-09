@@ -6,6 +6,7 @@ type EventProps = {
   date: string;
   time: string;
   isPast: boolean;
+  imageUrl: string;
 };
 
 export default EventProps;
