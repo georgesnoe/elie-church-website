@@ -15,21 +15,21 @@ export default function Activites() {
       title: 'Séminaire sur la famille',
       description: 'Un séminaire inspirant sur les fondations bibliques de la famille et du couple, avec des témoignages forts.',
       date: '22 Juin 2025',
-      image: 'https://images.unsplash.com/photo-1490645935378-ab257c161cd0', // Placeholder, à remplacer
+      image: 'https://images.unsplash.com/photo-1517404215738-15263e9f9178', // Placeholder, à remplacer
     },
     {
       id: 3,
       title: 'Culte de Pâques',
       description: 'Une célébration émouvante de la résurrection, marquée par des chants de louange et un message d’espoir.',
       date: '20 Avril 2025',
-      image: 'https://images.unsplash.com/photo-1549420063-42e128669e46', // Placeholder, à remplacer
+      image: 'https://images.unsplash.com/photo-1517404215738-15263e9f9178', // Placeholder, à remplacer
     },
     {
       id: 4,
       title: 'Concert de la chorale',
       description: 'Un grand concert qui a rassemblé la communauté pour un moment de musique et de célébration.',
       date: '10 Mai 2025',
-      image: 'https://images.unsplash.com/photo-1471343729906-8d5f6630f697', // Placeholder, à remplacer
+      image: 'https://images.unsplash.com/photo-1517404215738-15263e9f9178', // Placeholder, à remplacer
     },
   ];
 
