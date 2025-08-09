@@ -96,6 +96,11 @@
   border: 0;
 }
 
+.footer .logo-placeholder {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .footer-bottom {
   text-align: center;
   margin-top: 2rem;
