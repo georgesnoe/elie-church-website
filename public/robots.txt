@@ -1,5 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://eglise-methodiste.vercel.app/sitemap.xml
-
