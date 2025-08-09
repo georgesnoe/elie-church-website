@@ -9,7 +9,7 @@ export default function Enseignements() {
       title: "La foi qui déplace les montagnes",
       preacher: "Pasteur John Doe",
       date: "05 Août 2025",
-      image: "https://images.unsplash.com/photo-1471343729906-8d5f6630f697",
+      image: "https://images.unsplash.com/photo-1517404215738-15263e9f9178",
       url: "#", // URL de l'audio à remplacer
     },
     {
