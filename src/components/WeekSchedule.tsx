@@ -1,12 +1,8 @@
-'use client';
-
-import { useRef } from 'react';
 import EventCard from "@/components/EventCard";
 import type EventProps from '@/lib/EventProps';
 import "@/styles/week-schedule.css";
 
-export default function WeekSchedule() { 
-  const scrollContainerRef = useRef<HTMLDivElement>(null);
+export default function WeekSchedule() {
 
   // Données de la semaine (Exemple) - Remplacez par vos données réelles
   const evenements: EventProps[] = [
@@ -19,37 +15,44 @@ export default function WeekSchedule() {
     { id: 7, title: 'Culte du dimanche', description: 'Culte d’adoration et de louange', day: 'Dimanche', date: '08', time: '09h30', isPast: false },
   ];
 
-  function scroll(direction: string) {
-    if (scrollContainerRef.current) {
-      const { current } = scrollContainerRef;
-      const scrollAmount = current.offsetWidth / 2; // Défilement de la moitié de la largeur
-      if (direction === 'left') {
-        current.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-      } else {
-        current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-      }
-    }
-  };
+
 
   return (
     <div className="programme-container">
       <h3 className="programme-title">Programme de la semaine</h3>
       <p className="programme-description">
         Découvrez les événements de la semaine à l&apos;église. Rejoignez-nous pour nos moments de prière, d&apos;enseignement et d&apos;adoration.
-      </p> 
+      </p>
       <div className="carousel-wrapper">
-        <button className="scroll-btn left" onClick={() => scroll('left')}>
+        <button className="scroll-btn left">
           <span>&larr;</span>
         </button>
-        <div className="events-scroll-container" ref={scrollContainerRef}>
+        <div className="events-scroll-container" id="scroll-container">
           {evenements.map(event => (
             <EventCard key={event.id} event={event} />
           ))}
         </div>
-        <button className="scroll-btn right" onClick={() => scroll('right')}>
+        <button className="scroll-btn right">
           <span>&rarr;</span>
         </button>
       </div>
+      <script>
+        {`
+          const scrollContainer = document.getElementById("scroll-container");
+          function scroll(direction) {
+            if (scrollContainer) {
+              const scrollAmount = scrollContainer.offsetWidth / 2;
+              if (direction === 'left') {
+                scrollContainer.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+              } else {
+                scrollContainer.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+              }
+            }
+          }
+          document.querySelector(".scroll-btn.left").addEventListener("click", () => scroll("left"));
+          document.querySelector(".scroll-btn.right").addEventListener("click", () => scroll("right"));
+        `}
+      </script>
     </div>
   );
 }
