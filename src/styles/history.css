@@ -1,0 +1,48 @@
+/* --- Conteneur de la page d'histoire --- */
+.histoire-page-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  background-color: #ffffff;
+}
+
+.histoire-article {
+  text-align: left;
+}
+
+.article-title {
+  font-family: serif;
+  font-size: 3rem;
+  color: #333333;
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+}
+
+.article-meta {
+  font-family: sans-serif;
+  font-size: 0.9rem;
+  color: #888888;
+  margin-bottom: 2rem;
+}
+
+.histoire-article p {
+  font-family: serif;
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: #4a4a4a;
+  margin-bottom: 1.5rem;
+}
+
+/* --- Réactivité sur mobile --- */
+@media (max-width: 768px) {
+  .histoire-page-container {
+    padding: 2rem 1rem;
+  }
+  .article-title {
+    font-size: 2rem;
+  }
+  .histoire-article p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+}
