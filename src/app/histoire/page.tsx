@@ -1,3 +1,5 @@
+import "@/styles/history.css";
+
 export default function Histoire() {
   return (
     <main>
