@@ -1,3 +1,5 @@
+import "@/styles/learning-sessions.css";
+
 export default function Enseignements() {
 
   const enseignements = [
