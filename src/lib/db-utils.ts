@@ -1,3 +1,5 @@
+export const lienSite = "https://eglise-methodiste.vercel.app";
+
 // Fonction utilitaire pour calculer les dates de début et de fin de la semaine
 export function getWeekDates() {
   const today = new Date();
