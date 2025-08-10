@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import pool from "@/lib/db";
 import "@/styles/activity.css";
 
@@ -70,3 +71,7 @@ export default async function Activites() {
     </main>
   );
 }
+
+export const metadata: Metadata = {
+  title: "Activités de l'église • Eglise méthodiste du Togo",
+};

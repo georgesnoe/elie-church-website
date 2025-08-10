@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import pool from "@/lib/db";
 import "@/styles/learning-sessions.css";
 
@@ -82,3 +83,7 @@ export default async function Enseignements() {
     </main>
   );
 }
+
+export const metadata: Metadata = {
+  title: "Enseignements bibliques • Église méthodiste du Togo",
+};

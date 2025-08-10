@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import "@/styles/history.css";
 
 export default function Histoire() {
@@ -30,3 +31,7 @@ export default function Histoire() {
     </main>
   );
 }
+
+export const metadata: Metadata = {
+  title: "Notre histoire • Église méthodiste du Togo",
+};
